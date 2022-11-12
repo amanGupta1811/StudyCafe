@@ -61,7 +61,8 @@ public class signUp extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            utility.showToast(signUp.this, "Succesfully create account, check your email to verify");
+                            //utility.showToast(signUp.this, "Succesfully create account, check your email to verify");
+                            Toast.makeText(signUp.this, "Succesfully create account, Check Your Email To Verify", Toast.LENGTH_LONG).show();
                             firebaseAuth.getCurrentUser().sendEmailVerification();
                             firebaseAuth.signOut();
                             finish();
